@@ -59,7 +59,10 @@ function handleSubmit(){
         update();
     }else{
         say("no way")
-        rizz-=1;
+        if(rizz>0){
+            rizz-=1;
+        }
+        
         update();
     }
 
@@ -97,11 +100,10 @@ function assignVal(item){
 
 function dig(){
     money++;
-    rizz-=.1;
+    negrizz+=.1;
     r-=2.14;
     g-=1.88;
     b-=5;
-    console.log(r)
     update();
 }
 
@@ -115,6 +117,7 @@ function shower(){
 }
 
 function update(){
+    console.log("rizz: ", rizz, "nrizz", negrizz, "money: ",money)
     document.getElementById("digTotal").textContent=`$ ${money}`;
     document.querySelector("body").style.backgroundColor=`rgb(${Math.floor(r)},${Math.floor(g)},${Math.floor(b)})`;
 }
