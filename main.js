@@ -49,7 +49,6 @@ function handleSubmit(){
     if(granted){
         say("sure fine")
         if(offer==="money"){
-            console.log("money",money)
             money-=offernum;
         }
         if(request==="money"){
